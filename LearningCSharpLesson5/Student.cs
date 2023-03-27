@@ -9,7 +9,7 @@ namespace OOP
 {   
     class Student : DevFaculty
     {
-        public override string FirstName { get; set; }
+        public  string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
         public string City { get; set; }
@@ -43,7 +43,26 @@ namespace OOP
         {
             CoursesAttended.Add(coursName);
         }
+        public void RemoveCourse(int courseId)
+        {
+            int removeIndex = courseId + 1;
+            CoursesAttended.RemoveAt(removeIndex);
+        }
 
+        public void GetListOfCourseds()
+        {
+            int i = 1;
+            foreach (var cour in CoursesAttended)
+            {
+                Console.WriteLine($"Id {i}  {cour}");
+                Console.WriteLine();
+                i++;
+            }
+        }
+        public void GetTotalCoursesNumber()
+        {
+            Console.WriteLine($"Student has {CoursesAttended.Count} courses.");
+        }
         public void Print()
         {
             string StudentCoursList = "";

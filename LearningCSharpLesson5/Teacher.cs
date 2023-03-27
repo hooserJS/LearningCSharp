@@ -8,19 +8,19 @@ namespace OOP
 {
     class Teacher : DevFaculty
     {
-        public override string FirstName { get; set; }
+        public  string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
         public string City { get; set; }
-        public List<string> Classes = new List<string>();
+        public List<string> Students = new List<string>();
+        public List<string> CoursesAttended = new List<string>();
 
-        public Teacher(string firstName, string lastName, int age, string city, string classes)
+        public Teacher(string firstName, string lastName, int age, string city, string students)
         {
             FirstName = firstName;
             LastName = lastName;
             Age = age;
             City = city;
-            Classes.Add(classes);
         }
         public Teacher(string firstName, string lastName, int age, string city) : this(firstName, lastName, age, city, "")
         {
@@ -38,31 +38,75 @@ namespace OOP
         {
         }
 
-        public void AddCours(string coursName)
+        public void AddStudent(string students)
         {
-            Classes.Add(coursName);
+            Students.Add((students));
+        }
+        public void RemoveStudent(int studentId)
+        {
+            int removeIndex = studentId + 1;
+            Students.RemoveAt(removeIndex);
         }
 
+        public void GetListOfStudents()
+        {
+            int i = 1;
+            foreach (var student in  Students)
+            {
+                Console.WriteLine($"Id {i}  {student}");
+                Console.WriteLine();
+                i++;
+            }
+        }
+        public void GetTotalStudentsNumber()
+        {
+            Console.WriteLine($"{FirstName} {LastName} has {Students.Count} students.");
+        }
+
+        public void AddCours(string coursName)
+        {
+            CoursesAttended.Add(coursName);
+        }
+        public void RemoveCourse(int courseId)
+        {
+            int removeIndex = courseId + 1;
+            CoursesAttended.RemoveAt(removeIndex);
+        }
+
+        public void GetListOfCourseds()
+        {
+            int i = 1;
+            foreach (var cour in CoursesAttended)
+            {
+                Console.WriteLine($"Id {i}  {cour}");
+                Console.WriteLine();
+                i++;
+            }
+        }
+        public void GetTotalCoursesNumber()
+        {
+            Console.WriteLine($"Teacher has {CoursesAttended.Count} courses.");
+        }
         public void Print()
         {
-            string TeacherClassList = "";
-            if (Classes != null)
+            string TeachersStudentList = "";
+            if (Students != null)
             {
-                foreach (var cour in Classes) { TeacherClassList = TeacherClassList + " " + cour; }
+                foreach (var cour in Students) { TeachersStudentList = TeachersStudentList + " " + cour; }
             }
 
-            Console.WriteLine($"Teachers FirstName = {FirstName}, LastName = {LastName}, Age = {Age}, City = {City}, Classes :{TeacherClassList}");
+            Console.WriteLine($"Teachers FirstName = {FirstName}, LastName = {LastName}, Age = {Age}, City = {City}, Classes :{TeachersStudentList}");
         }
 
         public override void SubjectDescribe()
         {
-            string TeacherClassList = "";
-            if (Classes != null)
+            string TeachersStudentList = "";
+            if (Students != null)
             {
-                foreach (var cour in Classes) { TeacherClassList = TeacherClassList + " " + cour; }
+                foreach (var cour in Students) { TeachersStudentList = TeachersStudentList + " " + cour; }
             }
 
-            Console.WriteLine($"Teachers FirstName = {FirstName}, LastName = {LastName}, Age = {Age}, City = {City}, Classes :{TeacherClassList}");
+            Console.WriteLine($"Teachers FirstName = {FirstName}, LastName = {LastName}, Age = {Age}, City = {City}, Classes :{TeachersStudentList}");
         }
     }
 }

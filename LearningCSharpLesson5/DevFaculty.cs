@@ -8,9 +8,6 @@ namespace OOP
 {
     public abstract class DevFaculty
     {
-
-    public abstract string FirstName { get; set}
-
         public abstract void SubjectDescribe();
 
     }

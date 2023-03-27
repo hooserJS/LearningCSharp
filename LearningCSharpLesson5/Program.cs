@@ -17,10 +17,13 @@ namespace OOP
             Course eng1 = new Course("Eng begginers", "Anna Good", 12);
 
             eng1.AddStudents(1);
+            eng1.AddStudentToList("Lopes");
+            eng1.GetListOfStudents();
+            eng1.GetTotalStudentsNumber();
             eng1.PrintCourse();
 
 
-            //Реализация получилась так себе. Пожалуйста укажите на что обратить внмание и что подтянуть. Благодарю :)
+            
         }
     }
 }
