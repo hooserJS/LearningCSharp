@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace OOP
 {   
-    class Student
+    class Student : DevFaculty
     {
-        public string FirstName { get; set; }
+        public override string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
         public string City { get; set; }
@@ -48,6 +48,17 @@ namespace OOP
         {
             string StudentCoursList = "";
             if(CoursesAttended != null)
+            {
+                foreach (var cour in CoursesAttended) { StudentCoursList = StudentCoursList + " " + cour; }
+            }
+
+            Console.WriteLine($"Students FirstName = {FirstName}, LastName = {LastName}, Age = {Age}, City = {City}, CoursesAttended :{StudentCoursList}");
+        }
+
+        public override void SubjectDescribe()
+        {
+            string StudentCoursList = "";
+            if (CoursesAttended != null)
             {
                 foreach (var cour in CoursesAttended) { StudentCoursList = StudentCoursList + " " + cour; }
             }
