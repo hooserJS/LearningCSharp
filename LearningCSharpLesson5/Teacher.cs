@@ -87,7 +87,8 @@ namespace OOP
         {
             Console.WriteLine($"Teacher has {CoursesAttended.Count} courses.");
         }
-        public void Print()
+
+            public void Print()
         {
             string TeachersStudentList = "";
             if (Students != null)
