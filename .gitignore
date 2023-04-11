@@ -5,3 +5,7 @@ LearningCSharpLesson4/bin/
 LearningCSharpLesson4/obj/
 LearningCSharpLesson5/bin/
 LearningCSharpLesson5/obj/
+ASPCoreWebAPI/obj/Debug/
+ASPCoreWebAPI/obj/
+ASPCoreWebAPI/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+ASPCoreWebAPI/bin/
