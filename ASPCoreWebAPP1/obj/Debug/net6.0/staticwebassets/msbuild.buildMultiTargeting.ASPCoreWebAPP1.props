@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ASPCoreWebAPP1.props" />
+</Project>
